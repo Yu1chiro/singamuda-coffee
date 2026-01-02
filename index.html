@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singamuda Coffee | Kedai Kopi Berkualitas di Bali</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .coffee-brown {
+            color: #6F4E37;
+        }
+        
+        .bg-coffee-brown {
+            background-color: #6F4E37;
+        }
+        
+        .border-coffee-brown {
+            border-color: #6F4E37;
+        }
+        
+        .bg-coffee-light {
+            background-color: #F5F1E8;
+        }
+        
+        .rating-star {
+            color: #FFD700;
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://lh3.googleusercontent.com/gps-cs-s/AG0ilSw3b6gotCVPWIbrbFV7S-BA908H1lxc06sA3cV7Vrffa--GMKKcES_pdaayafWYN297C7bypr9SRcE_50-ek4v0yzU-JTPdcXqgQeQJsvDheEW8ePNr3lFl_vlclVgUxR6uEyVE8sbup5t9=s1286-k-no');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-coffee-light">
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 shadow-md bg-white">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <i class="fas fa-coffee text-2xl coffee-brown mr-2"></i>
+                    <h1 class="heading-font text-2xl font-bold coffee-brown">Singamuda Coffee</h1>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobileMenuButton" class="md:hidden text-2xl coffee-brown">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="tab-link font-medium coffee-brown hover:text-amber-800 transition" data-tab="home">Beranda</a>
+                    <a href="#" class="tab-link font-medium coffee-brown hover:text-amber-800 transition" data-tab="menu">Menu</a>
+                    <a href="#" class="tab-link font-medium coffee-brown hover:text-amber-800 transition" data-tab="reviews">Ulasan</a>
+                    <a href="#" class="tab-link font-medium coffee-brown hover:text-amber-800 transition" data-tab="about">Tentang</a>
+                    <a href="#" class="tab-link font-medium coffee-brown hover:text-amber-800 transition" data-tab="contact">Kontak</a>
+                </nav>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-2">
+                <div class="flex flex-col space-y-3">
+                    <a href="#" class="tab-link font-medium coffee-brown py-2 border-b border-gray-200" data-tab="home">Beranda</a>
+                    <a href="#" class="tab-link font-medium coffee-brown py-2 border-b border-gray-200" data-tab="menu">Menu</a>
+                    <a href="#" class="tab-link font-medium coffee-brown py-2 border-b border-gray-200" data-tab="reviews">Ulasan</a>
+                    <a href="#" class="tab-link font-medium coffee-brown py-2 border-b border-gray-200" data-tab="about">Tentang</a>
+                    <a href="#" class="tab-link font-medium coffee-brown py-2" data-tab="contact">Kontak</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="tab-content active">
+            <div class="hero-bg py-20 md:py-32">
+                <div class="container mx-auto px-4">
+                    <div class="max-w-2xl text-white">
+                        <h2 class="heading-font text-4xl md:text-5xl font-bold mb-4">Nikmati Kenikmatan Kopi Asli Bali</h2>
+                        <p class="text-lg mb-8">Singamuda Coffee menghadirkan cita rasa kopi terbaik dari biji pilihan dengan suasana yang hangat dan nyaman.</p>
+                        
+                        <div class="flex flex-wrap items-center mb-8">
+                            <div class="flex items-center mr-8 mb-4">
+                                <div class="flex rating-star">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="ml-2 font-semibold">5,0 (7 ulasan)</span>
+                            </div>
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-tags mr-2"></i>
+                                <span class="font-semibold">Rp 1.000 - Rp 25.000</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#" class="bg-coffee-brown hover:bg-amber-900 text-white font-semibold py-3 px-6 rounded-lg transition flex items-center">
+                                <i class="fas fa-shopping-cart mr-2"></i> Pesan Sekarang
+                            </a>
+                            <a href="#contact" class="tab-link bg-white coffee-brown hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2"></i> Kunjungi Kami
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Features -->
+            <div class="py-12 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center p-6 rounded-lg bg-coffee-light">
+                            <div class="text-3xl coffee-brown mb-4">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <h3 class="heading-font text-xl font-bold mb-2">Makan di Tempat</h3>
+                            <p class="text-gray-700">Nikmati suasana nyaman kedai kami dengan desain yang hangat dan bersahabat.</p>
+                        </div>
+                        
+                        <div class="text-center p-6 rounded-lg bg-coffee-light">
+                            <div class="text-3xl coffee-brown mb-4">
+                                <i class="fas fa-coffee-to-go"></i>
+                            </div>
+                            <h3 class="heading-font text-xl font-bold mb-2">Bawa Pulang</h3>
+                            <p class="text-gray-700">Pesan kopi favorit Anda untuk dinikmati di rumah atau di perjalanan.</p>
+                        </div>
+                        
+                        <div class="text-center p-6 rounded-lg bg-coffee-light">
+                            <div class="text-3xl coffee-brown mb-4">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h3 class="heading-font text-xl font-bold mb-2">Biji Kopi Pilihan</h3>
+                            <p class="text-gray-700">Diolah dari biji kopi terbaik Bali dengan proses yang menjaga cita rasa asli.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="tab-content py-16">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="heading-font text-3xl md:text-4xl font-bold coffee-brown mb-4">
+                Menu Spesial Kami
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Pilihan kopi favorit dari biji pilihan, diseduh dengan cinta untuk menemani hari Anda.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
+                <div class="relative overflow-hidden h-64">
+                    <img src="https://i.pinimg.com/736x/f8/56/1e/f8561ea80e14bd1989b4fe87736e1468.jpg" 
+                         alt="Cappuccino" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+                        <span class="text-sm font-bold coffee-brown">Rp 20.000</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="heading-font text-xl font-bold coffee-brown">Cappuccino</h3>
+                        <div class="flex text-amber-400 text-xs">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-6 line-clamp-2">
+                        Perpaduan espresso, susu steamed, dan foam lembut dengan rasa seimbang yang klasik.
+                    </p>
+                    <button class="w-full bg-coffee-brown hover:bg-amber-900 text-white font-semibold py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
+                        <i class="fas fa-shopping-basket text-sm"></i> Pesan Sekarang
+                    </button>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
+                <div class="relative overflow-hidden h-64">
+                    <img src="https://i.pinimg.com/736x/25/f6/8e/25f68e30a8d640e73c8b58382ed9b1c3.jpg" 
+                         alt="Espresso" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+                        <span class="text-sm font-bold coffee-brown">Rp 15.000</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="heading-font text-xl font-bold coffee-brown">Espresso</h3>
+                        <div class="flex text-amber-400 text-xs">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-6 line-clamp-2">
+                        Ekstraksi kopi murni dengan bodi tebal dan aroma yang sangat kuat. Cocok untuk penyemangat pagi.
+                    </p>
+                    <button class="w-full bg-coffee-brown hover:bg-amber-900 text-white font-semibold py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
+                        <i class="fas fa-shopping-basket text-sm"></i> Pesan Sekarang
+                    </button>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
+                <div class="relative overflow-hidden h-64">
+                    <img src="https://i.pinimg.com/1200x/55/0f/21/550f2140321bb0d9dfb2f77262885c7d.jpg" 
+                         alt="Caramel Latte" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+                        <span class="text-sm font-bold coffee-brown">Rp 25.000</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="heading-font text-xl font-bold coffee-brown">Caramel Latte</h3>
+                        <div class="flex text-amber-400 text-xs">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-6 line-clamp-2">
+                        Latte lembut dengan sirup caramel premium yang manis dan tekstur susu yang creamy.
+                    </p>
+                    <button class="w-full bg-coffee-brown hover:bg-amber-900 text-white font-semibold py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
+                        <i class="fas fa-shopping-basket text-sm"></i> Pesan Sekarang
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="tab-content py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="heading-font text-3xl md:text-4xl font-bold coffee-brown mb-4">Ulasan Pelanggan</h2>
+                    <p class="text-gray-700 max-w-2xl mx-auto">Dengan rating 5,0 dari 7 ulasan, pelanggan kami puas dengan layanan dan kualitas kopi kami.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Review 1 -->
+                    <div class="bg-coffee-light p-6 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-coffee-brown flex items-center justify-center text-white font-bold text-lg mr-4">AK</div>
+                            <div>
+                                <h4 class="font-bold coffee-brown">Ariska K.</h4>
+                                <div class="flex rating-star">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">"Kopinya benar-benar enak, tempatnya nyaman banget buat nongkrong atau kerja. Cappuccino Bali favorit saya!"</p>
+                    </div>
+                    
+                    <!-- Review 2 -->
+                    <div class="bg-coffee-light p-6 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-coffee-brown flex items-center justify-center text-white font-bold text-lg mr-4">MP</div>
+                            <div>
+                                <h4 class="font-bold coffee-brown">Maya P.</h4>
+                                <div class="flex rating-star">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">"Espresso Singamuda punya karakter yang kuat tapi tidak pahit. Suasana kedainya sangat cozy, bakal balik lagi pasti."</p>
+                    </div>
+                    
+                    <!-- Review 3 -->
+                    <div class="bg-coffee-light p-6 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-coffee-brown flex items-center justify-center text-white font-bold text-lg mr-4">DW</div>
+                            <div>
+                                <h4 class="font-bold coffee-brown">Dewa W.</h4>
+                                <div class="flex rating-star">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">"Pelayanannya ramah, harga terjangkau untuk kualitas segini. Iced Caramel Lattenya juara, pas buat cuaca panas di Bali."</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <button class="bg-coffee-brown hover:bg-amber-900 text-white font-semibold py-3 px-8 rounded-lg transition">
+                        Tulis Ulasan
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="tab-content py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="heading-font text-3xl md:text-4xl font-bold coffee-brown mb-4">Tentang Singamuda Coffee</h2>
+                    <p class="text-gray-700 max-w-3xl mx-auto">Singamuda Coffee adalah kedai kopi yang berlokasi di jantung Buleleng, Bali. Kami berkomitmen untuk menyajikan kopi berkualitas dengan cita rasa khas Bali dalam suasana yang hangat dan bersahabat.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSw3b6gotCVPWIbrbFV7S-BA908H1lxc06sA3cV7Vrffa--GMKKcES_pdaayafWYN297C7bypr9SRcE_50-ek4v0yzU-JTPdcXqgQeQJsvDheEW8ePNr3lFl_vlclVgUxR6uEyVE8sbup5t9=s1286-k-no" 
+                             alt="Interior Singamuda Coffee" class="rounded-xl shadow-lg w-full">
+                    </div>
+                    
+                    <div>
+                        <h3 class="heading-font text-2xl font-bold coffee-brown mb-6">Visi & Misi Kami</h3>
+                        <p class="text-gray-700 mb-6">Sebagai kedai kopi lokal, kami bertujuan untuk memperkenalkan kekayaan cita rasa kopi Bali kepada dunia. Setiap cangkir yang kami sajikan adalah hasil dari proses seleksi biji kopi terbaik, penyangraian yang tepat, dan penyajian dengan penuh dedikasi.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mt-1 mr-3"></i>
+                                <p class="text-gray-700">Menggunakan biji kopi pilihan dari petani lokal Bali</p>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mt-1 mr-3"></i>
+                                <p class="text-gray-700">Proses penyangraian yang menjaga karakter asli kopi</p>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mt-1 mr-3"></i>
+                                <p class="text-gray-700">Suasana kedai yang nyaman untuk bersantai atau bekerja</p>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mt-1 mr-3"></i>
+                                <p class="text-gray-700">Harga terjangkau dengan kualitas premium</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Location Section -->
+        <section id="contact" class="tab-content py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="heading-font text-3xl md:text-4xl font-bold coffee-brown mb-4">Kunjungi Kami</h2>
+                    <p class="text-gray-700 max-w-2xl mx-auto">Kami buka setiap hari dengan jam operasional yang tertera di bawah. Datang dan nikmati kopi terbaik kami!</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Information -->
+                    <div>
+                        <div class="bg-coffee-light p-8 rounded-xl mb-8">
+                            <h3 class="heading-font text-2xl font-bold coffee-brown mb-6">Informasi Kontak</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <i class="fas fa-map-marker-alt coffee-brown text-xl mr-4 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold coffee-brown mb-1">Alamat</h4>
+                                        <p class="text-gray-700">V3MG+FFH, Banyuasri, Kec. Buleleng, Kabupaten Buleleng, Bali</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <i class="fas fa-phone coffee-brown text-xl mr-4 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold coffee-brown mb-1">Telepon</h4>
+                                        <p class="text-gray-700">0877-6716-7168</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <i class="fas fa-clock coffee-brown text-xl mr-4 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold coffee-brown mb-1">Jam Operasional</h4>
+                                        <p class="text-gray-700">Buka · Tutup pukul 17.00</p>
+                                        <p class="text-gray-700 text-sm mt-1">Diperbarui 12 minggu yang lalu</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <i class="fas fa-money-bill-wave coffee-brown text-xl mr-4 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-bold coffee-brown mb-1">Kisaran Harga</h4>
+                                        <p class="text-gray-700">Rp 1.000 - Rp 25.000 per orang</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <button class="flex items-center bg-coffee-brown hover:bg-amber-900 text-white font-semibold py-3 px-6 rounded-lg transition">
+                                <i class="fas fa-route mr-2"></i> Dapatkan Rute
+                            </button>
+                            <button class="flex items-center bg-white border border-coffee-brown coffee-brown hover:bg-coffee-light font-semibold py-3 px-6 rounded-lg transition">
+                                <i class="fas fa-share-alt mr-2"></i> Bagikan
+                            </button>
+                            <button class="flex items-center bg-white border border-coffee-brown coffee-brown hover:bg-coffee-light font-semibold py-3 px-6 rounded-lg transition">
+                                <i class="fas fa-mobile-alt mr-2"></i> Kirim ke Ponsel
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Map & Additional Info -->
+                    <div>
+                        <div class="h-80 bg-gray-300 rounded-xl mb-8 flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-map-marked-alt text-5xl coffee-brown mb-4"></i>
+                                <p class="coffee-brown font-bold">Peta Lokasi Singamuda Coffee</p>
+                                <p class="text-gray-700 mt-2">Banyuasri, Kec. Buleleng, Bali</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-coffee-light p-6 rounded-xl">
+                            <h4 class="heading-font text-xl font-bold coffee-brown mb-4">Fasilitas Lainnya</h4>
+                            <div class="flex flex-wrap gap-4">
+                                <span class="bg-white border border-coffee-brown coffee-brown font-medium py-2 px-4 rounded-lg">Wi-Fi Gratis</span>
+                                <span class="bg-white border border-coffee-brown coffee-brown font-medium py-2 px-4 rounded-lg">Stop Kontak</span>
+                                <span class="bg-white border border-coffee-brown coffee-brown font-medium py-2 px-4 rounded-lg">Parkir Luas</span>
+                                <span class="bg-white border border-coffee-brown coffee-brown font-medium py-2 px-4 rounded-lg">Area Merokok</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-coffee-brown text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-coffee text-2xl mr-2"></i>
+                        <h2 class="heading-font text-2xl font-bold">Singamuda Coffee</h2>
+                    </div>
+                    <p class="text-gray-300">Kedai Kopi Berkualitas di Bali</p>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-300 mb-4">Ikuti kami di media sosial</p>
+                    <div class="flex justify-center md:justify-end space-x-4 text-2xl">
+                        <a href="#" class="hover:text-amber-300 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-amber-300 transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="hover:text-amber-300 transition"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-amber-800 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2023 Singamuda Coffee. Hak Cipta Dilindungi.</p>
+                <p class="mt-2">Dibuat dengan <i class="fas fa-heart text-red-500"></i> untuk pecinta kopi Bali.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+            
+            // Change icon
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Tab navigation
+        document.querySelectorAll('.tab-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Get the target tab
+                const targetTab = this.getAttribute('data-tab');
+                
+                // Hide all tabs
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                
+                // Show target tab
+                document.getElementById(targetTab).classList.add('active');
+                
+                // Update active link (optional visual indicator)
+                document.querySelectorAll('.tab-link').forEach(link => {
+                    link.classList.remove('text-amber-800', 'font-bold');
+                });
+                this.classList.add('text-amber-800', 'font-bold');
+                
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobileMenu');
+                const mobileMenuButton = document.getElementById('mobileMenuButton');
+                const mobileIcon = mobileMenuButton.querySelector('i');
+                
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileIcon.classList.remove('fa-times');
+                    mobileIcon.classList.add('fa-bars');
+                }
+            });
+        });
+        
+        // Order buttons
+        document.querySelectorAll('button:contains("Pesan")').forEach(button => {
+            button.addEventListener('click', function() {
+                const menuItem = this.closest('.bg-white').querySelector('h3').textContent;
+                alert(`Terima kasih! Anda telah memesan: ${menuItem}\nTim kami akan segera memproses pesanan Anda.`);
+            });
+        });
+        
+        // Review button
+        document.querySelector('button:contains("Tulis Ulasan")').addEventListener('click', function() {
+            alert('Terima kasih atas minat Anda! Fitur ulasan sedang dalam pengembangan.');
+        });
+        
+        // Route button
+        document.querySelector('button:contains("Dapatkan Rute")').addEventListener('click', function() {
+            alert('Membuka aplikasi peta dengan lokasi Singamuda Coffee...');
+        });
+        
+        // Share button
+        document.querySelector('button:contains("Bagikan")').addEventListener('click', function() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Singamuda Coffee',
+                    text: 'Kedai kopi berkualitas di Bali dengan rating 5,0!',
+                    url: window.location.href,
+                });
+            } else {
+                alert('Berbagi tautan melalui: singamudacoffee.com');
+            }
+        });
+        
+        // Send to phone button
+        document.querySelector('button:contains("Kirim ke Ponsel")').addEventListener('click', function() {
+            alert('Kirim informasi ini ke ponsel Anda melalui SMS/WhatsApp');
+        });
+        
+        // View full menu button
+        document.querySelector('button:contains("Lihat Menu Lengkap")').addEventListener('click', function() {
+            document.querySelector('[data-tab="menu"]').click();
+        });
+        
+        // Visit us button in hero
+        document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('[data-tab="contact"]').click();
+        });
+    </script>
+</body>
+</html>
