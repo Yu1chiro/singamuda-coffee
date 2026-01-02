@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temani Kopi | Coffee & Creative Space di Singaraja, Bali</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .primary-color {
+            color: #4A2C2A;
+        }
+        
+        .bg-primary {
+            background-color: #4A2C2A;
+        }
+        
+        .border-primary {
+            border-color: #4A2C2A;
+        }
+        
+        .secondary-color {
+            color: #C9A769;
+        }
+        
+        .bg-secondary {
+            background-color: #C9A769;
+        }
+        
+        .bg-cream {
+            background-color: #F8F5F0;
+        }
+        
+        .rating-star {
+            color: #FFB800;
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(74, 44, 42, 0.85), rgba(74, 44, 42, 0.9)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-8px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .instagram-post {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .busy-chart {
+            height: 20px;
+            background-color: #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .busy-bar {
+            height: 100%;
+            background-color: #4A2C2A;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-cream">
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 shadow-md bg-white">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center mr-3">
+                        <i class="fas fa-mug-hot text-white text-lg"></i>
+                    </div>
+                    <h1 class="heading-font text-2xl font-bold primary-color">Temani Kopi</h1>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobileMenuButton" class="md:hidden text-2xl primary-color">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="tab-link font-medium primary-color hover:text-secondary-color transition" data-tab="home">Beranda</a>
+                    <a href="#" class="tab-link font-medium primary-color hover:text-secondary-color transition" data-tab="menu">Menu</a>
+                    <a href="#" class="tab-link font-medium primary-color hover:text-secondary-color transition" data-tab="reviews">Ulasan</a>
+                    <a href="#" class="tab-link font-medium primary-color hover:text-secondary-color transition" data-tab="gallery">Galeri</a>
+                    <a href="#" class="tab-link font-medium primary-color hover:text-secondary-color transition" data-tab="about">Tentang</a>
+                    <a href="#" class="tab-link font-medium primary-color hover:text-secondary-color transition" data-tab="contact">Kontak</a>
+                </nav>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-2">
+                <div class="flex flex-col space-y-3">
+                    <a href="#" class="tab-link font-medium primary-color py-2 border-b border-gray-200" data-tab="home">Beranda</a>
+                    <a href="#" class="tab-link font-medium primary-color py-2 border-b border-gray-200" data-tab="menu">Menu</a>
+                    <a href="#" class="tab-link font-medium primary-color py-2 border-b border-gray-200" data-tab="reviews">Ulasan</a>
+                    <a href="#" class="tab-link font-medium primary-color py-2 border-b border-gray-200" data-tab="gallery">Galeri</a>
+                    <a href="#" class="tab-link font-medium primary-color py-2 border-b border-gray-200" data-tab="about">Tentang</a>
+                    <a href="#" class="tab-link font-medium primary-color py-2" data-tab="contact">Kontak</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="tab-content active">
+            <div class="hero-bg py-20 md:py-32">
+                <div class="container mx-auto px-4">
+                    <div class="max-w-2xl text-white">
+                        <span class="inline-block bg-secondary px-4 py-1 rounded-full text-sm font-medium mb-4">Coffee & Creative Space</span>
+                        <h2 class="heading-font text-4xl md:text-5xl font-bold mb-4">Tempat Ngopi yang Nyaman di Sekitar Kampus</h2>
+                        <p class="text-lg mb-8">Temani Kopi menghadirkan lebih dari sekadar kopi - kami menciptakan ruang untuk berkarya, berkumpul, dan bercerita.</p>
+                        
+                        <div class="flex flex-wrap items-center mb-8">
+                            <div class="flex items-center mr-8 mb-4 bg-black bg-opacity-30 px-4 py-2 rounded-full">
+                                <div class="flex rating-star mr-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="font-semibold">4,3 (66 ulasan)</span>
+                            </div>
+                            <div class="flex items-center mb-4 bg-black bg-opacity-30 px-4 py-2 rounded-full">
+                                <i class="fas fa-tags mr-2"></i>
+                                <span class="font-semibold">Rp 25.000 - Rp 50.000</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#" class="bg-secondary hover:bg-amber-700 text-white font-semibold py-3 px-6 rounded-lg transition flex items-center">
+                                <i class="fas fa-calendar-alt mr-2"></i> Reservasi Meja
+                            </a>
+                            <a href="#menu" class="tab-link bg-white primary-color hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition flex items-center">
+                                <i class="fas fa-coffee mr-2"></i> Lihat Menu
+                            </a>
+                            <a href="https://www.instagram.com/temanikopi_/" target="_blank" class="bg-transparent border border-white text-white hover:bg-white hover:text-primary font-semibold py-3 px-6 rounded-lg transition flex items-center">
+                                <i class="fab fa-instagram mr-2"></i> Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Info -->
+            <div class="py-12 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                        <div class="text-center p-6 rounded-xl border border-gray-200">
+                            <div class="text-3xl primary-color mb-4">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3 class="heading-font text-lg font-bold mb-2">Jam Buka</h3>
+                            <p class="text-gray-700 font-medium">Tutup · Buka pukul 15.00</p>
+                            <p class="text-gray-500 text-sm mt-1">Diperbarui 11 minggu lalu</p>
+                        </div>
+                        
+                        <div class="text-center p-6 rounded-xl border border-gray-200">
+                            <div class="text-3xl primary-color mb-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3 class="heading-font text-lg font-bold mb-2">Lokasi</h3>
+                            <p class="text-gray-700 font-medium">Dekat Kampus Undiksha</p>
+                            <p class="text-gray-500 text-sm mt-1">Kaliuntu, Buleleng, Bali</p>
+                        </div>
+                        
+                        <div class="text-center p-6 rounded-xl border border-gray-200">
+                            <div class="text-3xl primary-color mb-4">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h3 class="heading-font text-lg font-bold mb-2">Layanan</h3>
+                            <p class="text-gray-700 font-medium">Makan di Tempat</p>
+                            <p class="text-gray-500 text-sm mt-1">Bawa Pulang</p>
+                        </div>
+                        
+                        <div class="text-center p-6 rounded-xl border border-gray-200">
+                            <div class="text-3xl primary-color mb-4">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                            <h3 class="heading-font text-lg font-bold mb-2">Fasilitas</h3>
+                            <p class="text-gray-700 font-medium">Wi-Fi Gratis</p>
+                            <p class="text-gray-500 text-sm mt-1">Stop Kontak & Area Kerja</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+       <section id="menu" class="tab-content py-16">
+    <div class="container mx-auto px-4">
+        
+        <div class="text-center mb-12">
+            <h2 class="heading-font text-3xl md:text-4xl font-bold coffee-brown mb-4">
+                Menu Andalan Kami
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Nikmati pilihan kopi dan makanan terbaik dengan harga Rp 15.000 hingga Rp 50.000.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col">
+                <div class="relative overflow-hidden h-60">
+                    <img src="https://i.pinimg.com/1200x/82/80/14/828014c4dc46528a5aa8d85114f8b076.jpg" 
+                         alt="Americano Coffee" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div class="absolute top-4 left-4 bg-coffee-brown text-white text-[10px] font-bold px-3 py-1 rounded-full tracking-widest">
+                        BESTSELLER
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="heading-font text-xl font-bold coffee-brown">Americano Coffee</h3>
+                        <span class="font-bold coffee-brown">Rp 28k</span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-6 flex-grow">
+                        Kopi hitam klasik dengan cita rasa kuat, diseduh dengan teknik manual untuk mendapatkan ekstraksi terbaik.
+                    </p>
+                    <button class="w-full bg-amber-900 text-white font-semibold py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
+                        <i class="fas fa-shopping-basket text-sm"></i> Pesan Sekarang
+                    </button>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col">
+                <div class="relative overflow-hidden h-60">
+                    <img src="https://images.unsplash.com/photo-1598866594230-a7c12756260f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1772&q=80" 
+                         alt="Spaghetti Aglio E Olio" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div class="absolute top-4 left-4 bg-orange-500 text-white text-[10px] font-bold px-3 py-1 rounded-full tracking-widest">
+                        RECOMMENDED
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="heading-font text-xl font-bold coffee-brown">Spaghetti Aglio</h3>
+                        <span class="font-bold coffee-brown">Rp 42k</span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-6 flex-grow">
+                        Spaghetti dengan saus minyak zaitun, bawang putih, dan cabai, disajikan dengan taburan parsley segar.
+                    </p>
+                    <button class="w-full bg-amber-900 text-white font-semibold py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
+                        <i class="fas fa-shopping-basket text-sm"></i> Pesan Sekarang
+                    </button>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col">
+                <div class="relative overflow-hidden h-60">
+                    <img src="https://i.pinimg.com/1200x/11/ec/b3/11ecb320fe25220bf0efae48241d744e.jpg" 
+                         alt="Pisang Goreng" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div class="absolute top-4 left-4 bg-yellow-600 text-white text-[10px] font-bold px-3 py-1 rounded-full tracking-widest">
+                        FAVORITE
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="heading-font text-xl font-bold coffee-brown">Pisang Goreng</h3>
+                        <span class="font-bold coffee-brown">Rp 15k</span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-6 flex-grow">
+                        Pisang goreng renyah dengan taburan gula manis, sangat cocok sebagai teman ngopi santai Anda.
+                    </p>
+                    <button class="w-full bg-amber-900 text-white font-semibold py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
+                        <i class="fas fa-shopping-basket text-sm"></i> Pesan Sekarang
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-12">
+            <button class=" border-2 border-coffee-brown coffee-brown bg-amber-900 text-white font-bold py-3 px-10 rounded-xl transition-all duration-300 shadow-sm">
+                <i class="fas fa-book-open mr-2"></i> Lihat Menu Lengkap
+            </button>
+        </div>
+    </div>
+</section>
+
+      <section id="reviews" class="tab-content py-16 bg-white">
+    <div class="container mx-auto px-4">
+        
+        <div class="text-center mb-12">
+            <h2 class="heading-font text-3xl md:text-4xl font-bold coffee-brown mb-6">Ulasan Pelanggan</h2>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 bg-coffee-light p-8 rounded-2xl max-w-4xl mx-auto shadow-sm">
+                <div class="text-center md:border-r md:border-gray-300 md:pr-12">
+                    <div class="text-6xl font-bold coffee-brown">4.3</div>
+                    <div class="flex rating-star text-xl my-2 justify-center">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="text-gray-500 text-sm">66 Ulasan Terverifikasi</p>
+                </div>
+
+                <div class="flex-1 w-full max-w-md">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-4">
+                            <span class="text-sm font-medium w-12 text-gray-600">5 Star</span>
+                            <div class="flex-1 h-3 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="bg-amber-400 h-full rounded-full" style="width: 60%;"></div>
+                            </div>
+                            <span class="text-sm text-gray-500 w-8">60%</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-sm font-medium w-12 text-gray-600">4 Star</span>
+                            <div class="flex-1 h-3 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="bg-amber-400 h-full rounded-full" style="width: 25%;"></div>
+                            </div>
+                            <span class="text-sm text-gray-500 w-8">25%</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-sm font-medium w-12 text-gray-600">3 Star</span>
+                            <div class="flex-1 h-3 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="bg-amber-400 h-full rounded-full" style="width: 10%;"></div>
+                            </div>
+                            <span class="text-sm text-gray-500 w-8">10%</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-sm font-medium w-12 text-gray-600">2 Star</span>
+                            <div class="flex-1 h-3 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="bg-amber-400 h-full rounded-full" style="width: 3%;"></div>
+                            </div>
+                            <span class="text-sm text-gray-500 w-8">3%</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-sm font-medium w-12 text-gray-600">1 Star</span>
+                            <div class="flex-1 h-3 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="bg-amber-400 h-full rounded-full" style="width: 2%;"></div>
+                            </div>
+                            <span class="text-sm text-gray-500 w-8">2%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 font-bold">
+                        AN
+                    </div>
+                    <div>
+                        <h4 class="font-bold coffee-brown leading-tight">Ayu N.</h4>
+                        <div class="flex rating-star text-xs">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <span class="ml-auto text-[10px] text-gray-400 font-medium bg-gray-50 px-2 py-1 rounded">2 MINGGU LALU</span>
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed italic">
+                    "Pisang goreng dengan gula manisnya juara! Tempatnya juga sangat tenang, cocok buat yang mau nugas lama-lama di sini."
+                </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold">
+                        RS
+                    </div>
+                    <div>
+                        <h4 class="font-bold coffee-brown leading-tight">Raka S.</h4>
+                        <div class="flex rating-star text-xs">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star text-gray-300"></i>
+                        </div>
+                    </div>
+                    <span class="ml-auto text-[10px] text-gray-400 font-medium bg-gray-50 px-2 py-1 rounded">1 BULAN LALU</span>
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed italic">
+                    "Tempat ngopi yang lumayan nyaman di sekitar Kampus Bawah Undiksha. Americano-nya pas, tidak terlalu asam."
+                </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center text-pink-700 font-bold">
+                        DL
+                    </div>
+                    <div>
+                        <h4 class="font-bold coffee-brown leading-tight">Dila L.</h4>
+                        <div class="flex rating-star text-xs">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <span class="ml-auto text-[10px] text-gray-400 font-medium bg-gray-50 px-2 py-1 rounded">3 MINGGU LALU</span>
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed italic">
+                    "Saran: adain menu cake atau pastry gitu dong kak. Tapi selebihnya oke banget, WiFi kencang dan kopinya mantap!"
+                </p>
+            </div>
+
+        </div>
+        
+        
+    </div>
+</section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="tab-content py-16 bg-coffee-light">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="heading-font text-3xl md:text-4xl font-bold coffee-brown mb-4">
+               Gallery Temani Kopi
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Tangkap momen hangat dan estetika setiap sudut kedai kami di Buleleng.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
+            
+            <div class="group relative overflow-hidden rounded-2xl shadow-md col-span-2 row-span-2">
+                <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Suasana Cafe" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div class="text-center text-white p-4">
+                        <i class="fab fa-instagram text-2xl mb-2"></i>
+                        <p class="text-sm font-medium tracking-widest">WAKTU BERSANTAI</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl shadow-md col-span-2 md:col-span-1">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Kopi Latte" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <i class="fas fa-heart text-white text-xl"></i>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl shadow-md">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Interior Cafe" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <i class="fas fa-camera text-white text-xl"></i>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl shadow-md md:row-span-2">
+                <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Detail Biji Kopi" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <p class="text-white text-xs font-bold tracking-tighter">Biji Kopi Pilihan</p>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl shadow-md col-span-2 md:col-span-1">
+                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Tempat Duduk" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <i class="fas fa-expand text-white"></i>
+                </div>
+            </div>
+
+             
+        </div>
+
+        <div class="text-center mt-10">
+            <p class="text-gray-500 mb-4 italic">Ingin melihat lebih banyak momen?</p>
+            <a href="#" class="inline-flex items-center gap-2 coffee-brown font-bold hover:text-amber-900 transition-colors">
+                <i class="fab fa-instagram text-xl"></i> Follow @temanikopi_
+            </a>
+        </div>
+    </div>
+</section>
+
+        <!-- About Section -->
+        <section id="about" class="tab-content py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="heading-font text-3xl md:text-4xl font-bold primary-color mb-4">Tentang Temani Kopi</h2>
+                    <p class="text-gray-700 max-w-3xl mx-auto">Lebih dari sekadar kedai kopi, Temani Kopi adalah ruang kreatif bagi mahasiswa, profesional, dan komunitas untuk berkumpul, berdiskusi, dan menghasilkan karya.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="heading-font text-2xl font-bold primary-color mb-6">Creative Space & Coffee</h3>
+                        <p class="text-gray-700 mb-6">Terletak strategis di dekat Kampus Undiksha Singaraja, Temani Kopi menjadi pilihan utama mahasiswa dan kaum muda untuk mengerjakan tugas, meeting kelompok, atau sekadar bersantai sambil menikmati kopi berkualitas.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-check text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold primary-color mb-1">Ruang Nyaman untuk Bekerja</h4>
+                                    <p class="text-gray-700">Wi-Fi cepat, stop kontak di setiap meja, dan suasana yang kondusif.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-check text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold primary-color mb-1">Menu Kuliner Variatif</h4>
+                                    <p class="text-gray-700">Tidak hanya kopi, kami juga menyajikan makanan ringan hingga berat dengan harga terjangkau.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-check text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold primary-color mb-1">Lokasi Strategis</h4>
+                                    <p class="text-gray-700">Berada di jantung kawasan pendidikan Kaliuntu, mudah dijangkau dari mana saja.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" 
+                             alt="Interior Temani Kopi" class="rounded-xl shadow-lg w-full">
+                        
+                        <!-- Photobox Info -->
+                        <div class="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-lg p-4 max-w-xs">
+                            <div class="flex items-center mb-2">
+                                <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center mr-3">
+                                    <i class="fas fa-camera text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold primary-color">Photobox Singaraja</h4>
+                                    <div class="flex items-center">
+                                        <div class="flex rating-star mr-2">
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                            <i class="fas fa-star text-xs"></i>
+                                        </div>
+                                        <span class="text-xs text-gray-600">5,0 (10 ulasan)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 text-sm">Studio fotografi yang bekerja sama dengan Temani Kopi. Buka hingga 22.00.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="tab-content py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="heading-font text-3xl md:text-4xl font-bold coffee-brown mb-4">Mampir ke Temani Kopi</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto italic">
+                Tempat ternyaman untuk berbagi cerita dan menikmati kopi pilihan di jantung Singaraja.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            
+            <div class="space-y-6">
+                <div class="bg-coffee-light p-8 rounded-3xl shadow-sm border border-amber-100">
+                    <h3 class="heading-font text-2xl font-bold coffee-brown mb-8 flex items-center gap-3">
+                        <i class="fas fa-info-circle text-lg"></i> Detail Lokasi
+                    </h3>
+                    
+                    <div class="space-y-8">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shadow-sm shrink-0">
+                                <i class="fas fa-map-marker-alt text-xl text-orange-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold coffee-brown">Alamat Lengkap</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed">V3QP+FRG, Jl. Lely, Kaliuntu, Kec. Buleleng, Kabupaten Buleleng, Bali 81114</p>
+                                <span class="text-[10px] bg-white px-2 py-0.5 rounded border border-gray-200 text-gray-400 mt-2 inline-block">Dekat Kampus Bawah Undiksha</span>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shadow-sm shrink-0">
+                                <i class="fas fa-clock text-xl text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold coffee-brown">Jam Operasional</h4>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                                    <p class="text-gray-700 font-medium">Tutup · Buka pukul 15.00</p>
+                                </div>
+                                <p class="text-xs text-gray-400 mt-1 italic">Disarankan datang sore hari untuk suasana terbaik.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shadow-sm shrink-0">
+                                <i class="fas fa-tag text-xl text-amber-700"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold coffee-brown">Kisaran Harga</h4>
+                                <p class="text-gray-700">Rp 25.000 — Rp 50.000 / orang</p>
+                                <p class="text-[10px] text-gray-400 mt-1 uppercase tracking-wider font-semibold">Harga Terjangkau Mahasiswa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-md">
+                    <div class="flex justify-between items-center mb-6">
+                        <h4 class="heading-font text-lg font-bold coffee-brown">Live Pengunjung</h4>
+                        <span class="text-xs font-bold text-orange-500 bg-orange-50 px-3 py-1 rounded-full">JUMAT</span>
+                    </div>
+                    <div class="relative pt-2">
+                        <div class="flex items-end gap-1 h-24 mb-2">
+                            <div class="flex-1 bg-gray-100 h-1/4 rounded-t-sm"></div>
+                            <div class="flex-1 bg-gray-100 h-1/3 rounded-t-sm"></div>
+                            <div class="flex-1 bg-gray-100 h-1/2 rounded-t-sm"></div>
+                            <div class="flex-1 bg-gray-200 h-2/3 rounded-t-sm"></div>
+                            <div class="flex-1 bg-amber-400 h-full rounded-t-sm relative">
+                                <div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[9px] font-bold coffee-brown bg-amber-100 px-1 rounded">RAMAI</div>
+                            </div>
+                            <div class="flex-1 bg-amber-300 h-3/4 rounded-t-sm"></div>
+                            <div class="flex-1 bg-gray-200 h-1/2 rounded-t-sm"></div>
+                        </div>
+                        <div class="flex justify-between text-[10px] text-gray-400 font-bold uppercase tracking-widest px-1">
+                            <span>15:00</span>
+                            <span>18:00</span>
+                            <span>21:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <div class="flex-grow min-h-[350px] bg-gray-200 rounded-3xl overflow-hidden shadow-inner relative group border-4 border-white mb-6">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.774472856037!2d115.0863!3d-8.1147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd191f630800001%3A0x7d00000000000000!2sKaliuntu%2C%20Buleleng!5e0!3m2!1sid!2sid!4v1620000000000" 
+                        class="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-500" 
+                        allowfullscreen="" loading="lazy">
+                    </iframe>
+                    <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-lg flex justify-between items-center">
+                        <div>
+                            <p class="text-xs font-bold text-gray-400 uppercase tracking-tighter">Lokasi Kami</p>
+                            <p class="text-sm font-bold coffee-brown">Singaraja, Bali</p>
+                        </div>
+                        <button class="bg-coffee-brown text-white text-xs px-4 py-2 rounded-xl font-bold hover:bg-amber-900 transition shadow-md">
+                            BUKA MAPS
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <button class="flex flex-col items-center justify-center bg-white border border-gray-100 p-4 rounded-2xl hover:bg-coffee-light transition-all group shadow-sm">
+                        <i class="fas fa-directions text-xl mb-2 text-blue-500 group-hover:scale-110 transition"></i>
+                        <span class="text-[11px] font-bold coffee-brown">RUTE</span>
+                    </button>
+                    <button class="flex flex-col items-center justify-center bg-white border border-gray-100 p-4 rounded-2xl hover:bg-coffee-light transition-all group shadow-sm">
+                        <i class="fas fa-share-alt text-xl mb-2 text-green-500 group-hover:scale-110 transition"></i>
+                        <span class="text-[11px] font-bold coffee-brown">BAGIKAN</span>
+                    </button>
+                    <button class="flex flex-col items-center justify-center bg-white border border-gray-100 p-4 rounded-2xl hover:bg-coffee-light transition-all group shadow-sm">
+                        <i class="fas fa-mobile-alt text-xl mb-2 text-purple-500 group-hover:scale-110 transition"></i>
+                        <span class="text-[11px] font-bold coffee-brown">PONSEL</span>
+                    </button>
+                    <button class="flex flex-col items-center justify-center bg-white border border-gray-100 p-4 rounded-2xl hover:bg-coffee-light transition-all group shadow-sm">
+                        <i class="fas fa-flag text-xl mb-2 text-red-500 group-hover:scale-110 transition"></i>
+                        <span class="text-[11px] font-bold coffee-brown">KLAIM</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mr-3">
+                            <i class="fas fa-mug-hot primary-color text-xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="heading-font text-2xl font-bold">Temani Kopi</h2>
+                            <p class="text-gray-300">Coffee & Creative Space</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 max-w-md">Kedai kopi dengan suasana nyaman untuk bekerja, berkumpul, dan bercerita. Terletak strategis di dekat Kampus Undiksha Singaraja.</p>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-300 mb-4">Ikuti perjalanan kami</p>
+                    <div class="flex justify-center md:justify-end space-x-4 text-2xl">
+                        <a href="https://www.instagram.com/temanikopi_/" target="_blank" class="hover:text-secondary transition transform hover:-translate-y-1">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="hover:text-secondary transition transform hover:-translate-y-1">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="hover:text-secondary transition transform hover:-translate-y-1">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm mt-4">#temanikopi #coffeeshopbali #singarajacafe</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-amber-800 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; Temani Kopi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+            
+            // Change icon
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Tab navigation
+        document.querySelectorAll('.tab-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Get the target tab
+                const targetTab = this.getAttribute('data-tab');
+                
+                // Hide all tabs
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                
+                // Show target tab
+                document.getElementById(targetTab).classList.add('active');
+                
+                // Update active link (optional visual indicator)
+                document.querySelectorAll('.tab-link').forEach(link => {
+                    link.classList.remove('text-secondary-color', 'font-bold');
+                });
+                this.classList.add('text-secondary-color', 'font-bold');
+                
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobileMenu');
+                const mobileMenuButton = document.getElementById('mobileMenuButton');
+                const mobileIcon = mobileMenuButton.querySelector('i');
+                
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileIcon.classList.remove('fa-times');
+                    mobileIcon.classList.add('fa-bars');
+                }
+                
+                // Smooth scroll to top of section
+                window.scrollTo({
+                    top: 100,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Order buttons
+        document.querySelectorAll('button:contains("Pesan")').forEach(button => {
+            button.addEventListener('click', function() {
+                const menuItem = this.closest('.bg-white').querySelector('h3').textContent;
+                const price = this.closest('.bg-white').querySelector('.secondary-color').textContent;
+                
+                // Create a simple modal
+                const modal = document.createElement('div');
+                modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+                modal.innerHTML = `
+                    <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="heading-font text-xl font-bold primary-color">Konfirmasi Pesanan</h3>
+                            <button class="text-gray-500 hover:text-gray-700 text-xl close-modal">&times;</button>
+                        </div>
+                        <p class="text-gray-700 mb-2">Anda akan memesan:</p>
+                        <p class="font-bold text-lg primary-color mb-2">${menuItem}</p>
+                        <p class="text-gray-700 mb-6">Harga: <span class="font-bold secondary-color">${price}</span></p>
+                        <div class="flex space-x-4">
+                            <button class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 rounded-lg transition close-modal">Batal</button>
+                            <button class="flex-1 bg-primary hover:bg-amber-900 text-white font-semibold py-3 rounded-lg transition" id="confirmOrder">Pesan Sekarang</button>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                // Close modal buttons
+                modal.querySelectorAll('.close-modal').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        document.body.removeChild(modal);
+                    });
+                });
+                
+                // Confirm order button
+                modal.querySelector('#confirmOrder').addEventListener('click', () => {
+                    alert(`Terima kasih! Pesanan ${menuItem} Anda telah diterima. Silakan tunjukkan pesan ini di kasir.`);
+                    document.body.removeChild(modal);
+                });
+                
+                // Close modal on outside click
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        document.body.removeChild(modal);
+                    }
+                });
+            });
+        });
+        
+        // Gallery filter
+        document.querySelectorAll('.gallery-filter').forEach(filter => {
+            filter.addEventListener('click', function() {
+                // Remove active class from all filters
+                document.querySelectorAll('.gallery-filter').forEach(f => {
+                    f.classList.remove('active', 'bg-primary', 'text-white');
+                    f.classList.add('bg-gray-200', 'text-gray-800');
+                });
+                
+                // Add active class to clicked filter
+                this.classList.remove('bg-gray-200', 'text-gray-800');
+                this.classList.add('active', 'bg-primary', 'text-white');
+                
+                const filterValue = this.getAttribute('data-filter');
+                const galleryItems = document.querySelectorAll('.gallery-item');
+                
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category').includes(filterValue)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        
+        
+        // Get directions button
+        document.querySelector('button:contains("Dapatkan Petunjuk")').addEventListener('click', function() {
+            const address = encodeURIComponent("V3QP+FRG, Jl. Lely, Kaliuntu, Kec. Buleleng, Kabupaten Buleleng, Bali 81114");
+            window.open(`https://www.google.com/maps/dir/?api=1&destination=${address}`, '_blank');
+        });
+        
+        // Action buttons
+        document.querySelectorAll('button:contains("Rute"), button:contains("Simpan"), button:contains("Kirim ke Ponsel"), button:contains("Bagikan")').forEach(button => {
+            button.addEventListener('click', function() {
+                const action = this.textContent.trim();
+                let message = '';
+                
+                switch(action) {
+                    case 'Rute':
+                        message = 'Membuka aplikasi peta untuk menuju ke Temani Kopi...';
+                        break;
+                    case 'Simpan':
+                        message = 'Lokasi Temani Kopi telah disimpan ke bookmark Anda.';
+                        break;
+                    case 'Kirim ke Ponsel':
+                        message = 'Informasi Temani Kopi akan dikirim ke nomor ponsel Anda.';
+                        break;
+                    case 'Bagikan':
+                        if (navigator.share) {
+                            navigator.share({
+                                title: 'Temani Kopi - Coffee & Creative Space',
+                                text: 'Kedai kopi nyaman dengan rating 4,3 di dekat Kampus Undiksha Singaraja!',
+                                url: window.location.href,
+                            });
+                            return;
+                        } else {
+                            message = 'Berbagi tautan melalui: temanikopi.com';
+                        }
+                        break;
+                }
+                
+                alert(message);
+            });
+        });
+        
+        // Claim business button
+        document.querySelector('button:contains("Klaim Bisnis Ini")').addEventListener('click', function() {
+            alert('Untuk mengklaim bisnis ini, silakan hubungi kami melalui Instagram @temanikopi_ atau email ke info@temanikopi.com');
+        });
+        
+        // View full menu button
+        document.querySelector('button:contains("Lihat Menu Lengkap")').addEventListener('click', function() {
+            document.querySelector('[data-tab="menu"]').click();
+        });
+        
+        // View menu button in hero
+        document.querySelector('a[href="#menu"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('[data-tab="menu"]').click();
+        });
+        
+        // Instagram button
+        document.querySelectorAll('a[href*="instagram"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (!this.getAttribute('href').includes('temanikopi_')) return;
+                // Allow default behavior (open in new tab)
+            });
+        });
+        
+        // Initialize first tab as active
+        document.querySelector('[data-tab="home"]').classList.add('text-secondary-color', 'font-bold');
+    </script>
+</body>
+</html>
